@@ -1,0 +1,32 @@
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
+html, body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    /* color:#e6e219; */
+    vertical-align: bottom;
+    text-align: center;
+    animation: algo 3s ease-in-out 2s infinite;
+}
+
+@keyframes algo {
+    from {color:black}
+    50% {color: rgb(218, 103, 32);}
+    to {color:black}
+}
