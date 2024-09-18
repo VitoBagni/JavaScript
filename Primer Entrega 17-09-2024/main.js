@@ -27,9 +27,9 @@ let num2;
 let operacion;
 let resultado;
 
-num1 = parseFloat(prompt("Ingrese el primer número: "));
-num2 = parseFloat(prompt("Ingrese el segundo número: "));
-operacion = prompt("Ingrese la operación (+, -, *, /): ");
+num1 = parseFloat(prompt("Ingresa un numero: "));
+num2 = parseFloat(prompt("Ingresa otro numero: "));
+operacion = prompt("Ingresa lo que queres hacer (+, -, *, /): ");
 
 if (operacion === "+") {
     resultado = num1 + num2;
