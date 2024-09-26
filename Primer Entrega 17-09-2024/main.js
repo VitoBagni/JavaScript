@@ -22,29 +22,60 @@
 //       - Si cumple con los 3 puntos anteriores, entonces no necesitamos una funcion ahi!
 
 
-let num1;
-let num2;
-let operacion;
-let resultado;
+// Funciones para las operaciones básicas
 
-num1 = parseFloat(prompt("Ingresa un numero: "));
-num2 = parseFloat(prompt("Ingresa otro numero: "));
-operacion = prompt("Ingresa lo que queres hacer (+, -, *, /): ");
 
-if (operacion === "+") {
-    resultado = num1 + num2;
-} else if (operacion === "-") {
-    resultado = num1 - num2;
-} else if (operacion === "*") {
-    resultado = num1 * num2;
-} else if (operacion === "/") {
-    if (num2 !== 0) {
-        resultado = num1 / num2;
-    } else {
-        alert("No se puede dividir por 0");
-    }
-} else {
-    alert("Operación no válida");
+function sumar(a, b) {
+    return a + b;
 }
 
-alert("El resultado es: " + resultado);
+function restar(a, b) {
+    return a - b;
+}
+
+function multiplicar(a, b) {
+    return a * b;
+}
+
+function dividir(a, b) {
+    if (b !== 0) {
+        return a / b;
+    } else {
+        return "No se puede dividir por 0";
+    }
+}
+
+// Función principal que realiza la operación
+function realizarOperacion(num1, num2, operacion) {
+    switch (operacion) {
+        case "+":
+            return sumar(num1, num2);
+        case "-":
+            return restar(num1, num2);
+        case "*":
+            return multiplicar(num1, num2);
+        case "/":
+            return dividir(num1, num2);
+        default:
+            return "Operación no válida";
+    }
+}
+
+// Ciclo para permitir al usuario realizar múltiples operaciones
+let continuar = true;
+
+while (continuar) {
+    // Tomar los números y la operación del usuario
+    const num1 = parseFloat(prompt("Ingresa un numero: "));
+    const num2 = parseFloat(prompt("Ingresa otro numero: "));
+    const operacion = prompt("Ingresa lo que queres hacer (+, -, *, /): ");
+
+    // Realizar la operación y mostrar el resultado
+    const resultado = realizarOperacion(num1, num2, operacion);
+    alert("El resultado es: " + resultado);
+
+    // Preguntar si el usuario quiere realizar otra operación
+    continuar = confirm("¿Quieres realizar otra operación?");
+}
+
+alert("Gracias por usar la calculadora.");
