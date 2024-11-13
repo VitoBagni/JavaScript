@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizador de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Organizador de Tareas</h1>
+    <form id="taskForm">
+      <input type="text" id="taskName" placeholder="Nueva tarea" required>
+      <select id="taskPriority">
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="baja">Baja</option>
+      </select>
+      <button type="submit">Agregar Tarea</button>
+    </form>
+    <div id="taskColumns">
+      <div id="altaColumn" class="task-column">
+        <h3>Alta</h3>
+        <ul class="task-list" id="altaList"></ul>
+      </div>
+      <div id="mediaColumn" class="task-column">
+        <h3>Media</h3>
+        <ul class="task-list" id="mediaList"></ul>
+      </div>
+      <div id="bajaColumn" class="task-column">
+        <h3>Baja</h3>
+        <ul class="task-list" id="bajaList"></ul>
+      </div>
+      <div id="completedColumn" class="task-column">
+        <h3>Completadas</h3>
+        <ul class="task-list" id="completedList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moment.js y Draggable.js desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Draggable/1.0.0-beta.12/Draggable.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
